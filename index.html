@@ -28,6 +28,36 @@
             justify-content: center;
             align-items: center;
         }
+        .content {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .contact-card {
+            min-width: 220px;
+            max-width: 300px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+        }
+        .contact-card h3 {
+            margin: 0 0 6px 0;
+            font-size: 16px;
+        }
+        .contact-card a {
+            color: #0a66c2;
+            text-decoration: none;
+            word-break: break-all;
+        }
         img {
             display: block;
             max-width: 100%;
@@ -35,12 +65,33 @@
             border-radius: 4px;
             margin: 0 auto;
         }
+
+        @media (max-width: 700px) {
+            .content {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .contact-card {
+                width: 100%;
+                max-width: 480px;
+            }
+            .image-container { max-width: 100%; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="image-container">
-        <img src="image.png" alt="Displayed PNG Image">
+    <div class="content">
+        <div class="image-container">
+            <img src="image.png" alt="Displayed PNG Image">
+        </div>
+
+        <aside class="contact-card" aria-label="Contact">
+            <h3>Contact</h3>
+            <p>Email account:</p>
+            <p><a href="mailto:info@alienarium.com">info@alienarium.com</a></p>
+            <p>If you'd like a different address, tell me which one to use.</p>
+        </aside>
     </div>
 
 </body>
